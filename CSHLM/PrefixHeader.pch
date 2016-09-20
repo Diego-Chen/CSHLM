@@ -1,0 +1,44 @@
+//
+//  PrefixHeader.pch
+//  CSHLM
+//
+//  Created by CHENSHANGMAC on 16/8/29.
+//  Copyright © 2016年 CHENSHANGMAC. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
+
+#define MAS_SHORTHAND  //这个宏加上后，可以去掉'mas_'这个前缀了
+
+#define MAS_SHORTHAND_GLOBALS  //这个宏加上后，可以去掉自动包装方法的'mas_'前缀
+
+#import "Masonry.h"  //注意，这两个宏必须定义在这个头文件的上面，因为"Masonry.h"中要用到上面2个宏，如果已经定义过了的话
+
+
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;  //使用Masonry布局的时候，防止block中的循环引用
+
+
+
+#import "AFNetworking.h"  //主要用于网络请求方法
+#import "UIKit+AFNetworking.h"  //主要用于文件下载
+#import "UIImageView+WebCache.h"
+
+#define SYLBURL   @"http://platform.okbuy.com/app/v14/focus/list/?app_id=1034&auth_sign=39de5c991a45e443374ac4d270ca33a3&device_model=iPhone%206%20Plus%20%28A1522%2FA1524%29&device_resolution=414%2A736&os=ios&session_id=F337F588-CE68-4787-9C56-AA7F8481958A&site_mask=6&version=4.5.2"
+#define  BYIMAGE @"http://i.okaybuy.cn/images/multipic/new/201608/f9/f9ee5b353040d565cf93230484b76c75.jpg"
+#define BASETAGXSTM 1000
+
+#define WIDTH [UIScreen mainScreen].bounds.size.width
+#define HEIGHT [UIScreen mainScreen].bounds.size.height
+#define NAVHEIGHT 64
+#define BASETAG 100
+#define XSTMURL   @"http://platform.okbuy.com/app/v14/outlets/outletsTabList"
+#define XSTM_PAGE @"http://platform.okbuy.com/app/v14/outlets/list/3/10/1"
+#define FENLEIURL @"http://platform.okbuy.com/app/v15/focus/virtual_category?app_id=1034&auth_sign=04602f025a4f2b52593cf98bfcb653db&device_model=iPhone%206%20Plus%20%28A1522%2FA1524%29&device_resolution=414%2A736&os=ios&session_id=F337F588-CE68-4787-9C56-AA7F8481958A&site_mask=6&version=4.5.3"
+#import "parameters.h"
+#import "CSNetManager.h"
